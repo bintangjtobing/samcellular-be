@@ -30,6 +30,7 @@ class TransactionApiController extends Controller
             'tax_rate_id' => 'nullable|integer',
             'is_direct_sale' => 'nullable|boolean',
             'shipping_charges' => 'nullable|numeric|min:0',
+            'created_by' => 3,
         ]);
 
         // Calculate tax details

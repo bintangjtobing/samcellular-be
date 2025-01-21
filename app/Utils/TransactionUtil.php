@@ -77,7 +77,7 @@ class TransactionUtil extends Util
             'final_total' => $final_total,
             'additional_notes' => ! empty($input['sale_note']) ? $input['sale_note'] : null,
             'staff_note' => ! empty($input['staff_note']) ? $input['staff_note'] : null,
-            'created_by' => $user_id,
+            'created_by' => $user_id ? $input['created_by'] : 3,
             'document' => ! empty($input['document']) ? $input['document'] : null,
             'custom_field_1' => ! empty($input['custom_field_1']) ? $input['custom_field_1'] : null,
             'custom_field_2' => ! empty($input['custom_field_2']) ? $input['custom_field_2'] : null,
