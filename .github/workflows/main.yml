@@ -1,0 +1,24 @@
+name: System Sam Cellular Deployment
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: Copy Specific Folders to Server
+              run: |
+                  sshpass -p '530EYuBe0rS7KY5@' rsync -avz -e "ssh -o StrictHostKeyChecking=no" \
+                      ./app ./resources ./routes \
+                      root@147.93.30.80:/var/www/samcellular-be/
+
