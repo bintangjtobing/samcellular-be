@@ -47,4 +47,25 @@ class ProductApiController extends Controller
             ], 500);
         }
     }
+    public function show($id)
+    {
+        try {
+            // Ambil produk berdasarkan ID
+            $product = Product::with(['brand', 'unit', 'category', 'sub_category', 'variations', 'variations.media'])
+                ->findOrFail($id);
+
+            // Return response sebagai JSON
+            return response()->json([
+                'success' => true,
+                'data' => $product
+            ]);
+        } catch (\Exception $e) {
+            // Handle error jika produk tidak ditemukan atau ada error lain
+            return response()->json([
+                'success' => false,
+                'message' => 'Product not found',
+                'error' => $e->getMessage()
+            ], 404);
+        }
+    }
 }

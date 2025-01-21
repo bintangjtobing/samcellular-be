@@ -11,6 +11,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route untuk mengambil semua produk
 Route::get('/products', [ProductApiController::class, 'index']);
+Route::get('/products/{id}', [ProductApiController::class, 'show']);
 
 Route::get('categories', [CategoryApiController::class, 'index']);
 Route::get('categories/dropdown', [CategoryApiController::class, 'dropdown']);
