@@ -28,7 +28,7 @@ class BrandApiController extends Controller
         try {
             $brands = Brands::where('business_id', $business_id)
                             ->orderBy('name', 'asc')
-                            ->get(['id', 'name']);
+                            ->get(['id', 'name', 'description']);
 
             return response()->json([
                 'success' => true,
