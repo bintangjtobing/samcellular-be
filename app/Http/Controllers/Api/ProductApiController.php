@@ -18,7 +18,7 @@ class ProductApiController extends Controller
     {
         try {
             // Ambil semua produk
-            $products = Product::with(['brand', 'unit', 'category', 'sub_category', 'variations', 'variations.media'])
+            $products = Product::with(['brand', 'unit', 'category', 'sub_category', 'variations', 'variations.media', 'variations.variation_location_details'])
                 ->when($request->has('name'), function ($query) use ($request) {
                     $query->where('name', 'like', '%' . $request->get('name') . '%');
                 })
@@ -51,7 +51,7 @@ class ProductApiController extends Controller
     {
         try {
             // Ambil produk berdasarkan ID
-            $product = Product::with(['brand', 'unit', 'category', 'sub_category', 'variations', 'variations.media'])
+            $product = Product::with(['brand', 'unit', 'category', 'sub_category', 'variations', 'variations.media', 'variations.variation_location_details'])
                 ->findOrFail($id);
 
             // Return response sebagai JSON
