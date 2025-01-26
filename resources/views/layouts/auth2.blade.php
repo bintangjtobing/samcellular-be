@@ -10,7 +10,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="https://res.cloudinary.com/dilb4d364/image/upload/v1737624495/1024logo_witxkl.png"
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dilb4d364/image/upload/v1737892201/App_icon_-_primary_orange_color_hqjodf.png"
         type="image/png" sizes="512x512">
 
     <title>@yield('title') - {{ config('app.name', 'POS') }}</title>
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div
                         class="lg:tw-w-16 md:tw-h-16 tw-w-12 tw-h-12 tw-flex tw-items-center tw-justify-center tw-mx-auto tw-overflow-hidden tw-bg-white tw-rounded-full tw-p-0.5 tw-mb-4">
-                        <img src="https://res.cloudinary.com/dilb4d364/image/upload/v1737624495/1024logo_witxkl.png"
+                        <img src="https://res.cloudinary.com/dilb4d364/image/upload/v1737892201/App_icon_-_primary_orange_color_hqjodf.png"
                             alt="lock" class="tw-rounded-full tw-object-fill" />
                     </div>
 
