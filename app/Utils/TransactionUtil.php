@@ -77,7 +77,7 @@ class TransactionUtil extends Util
             'final_total' => $final_total,
             'additional_notes' => ! empty($input['sale_note']) ? $input['sale_note'] : null,
             'staff_note' => ! empty($input['staff_note']) ? $input['staff_note'] : null,
-            'created_by' => $user_id ? $input['created_by'] : 3,
+            'created_by' => $user_id ? $input['created_by'] : 1,
             'document' => ! empty($input['document']) ? $input['document'] : null,
             'custom_field_1' => ! empty($input['custom_field_1']) ? $input['custom_field_1'] : null,
             'custom_field_2' => ! empty($input['custom_field_2']) ? $input['custom_field_2'] : null,
@@ -143,7 +143,6 @@ class TransactionUtil extends Util
             'additional_expense_key_3' => ! empty($input['additional_expense_key_3']) ? $input['additional_expense_key_3'] : null,
             'additional_expense_key_4' => ! empty($input['additional_expense_key_4']) ? $input['additional_expense_key_4'] : null,
             'is_kitchen_order' => ! empty($input['is_kitchen_order']) ? 1 : 0,
-
         ]);
 
         return $transaction;
